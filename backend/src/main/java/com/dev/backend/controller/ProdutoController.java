@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.backend.entity.Pessoa;
-import com.dev.backend.service.PessoaService;
+import com.dev.backend.entity.Produto;
+import com.dev.backend.service.ProdutoService;
 
 @RestController
-@RequestMapping("/api/pessoa")
-public class PessoaController {
-    
+@RequestMapping("api/produto")
+public class ProdutoController {
+
     @Autowired
-    private PessoaService pessoaService;
+    private ProdutoService produtoService;
 
     @GetMapping("/")
-    public List<Pessoa> buscarTodos(){
-        return pessoaService.buscarTodos();
+    public List<Produto> buscarTodos() {
+        return produtoService.buscarTodos();
     }
 
     @PostMapping("/")
-    public Pessoa inserir(@RequestBody Pessoa pessoa){
-        return pessoaService.inserir(pessoa);
+    public Produto inserir(@RequestBody Produto produto) {
+        return produtoService.inserir(produto);
     }
 
     @PutMapping("/")
-    public Pessoa alterar(@RequestBody Pessoa pessoa){
-        return pessoaService.alterar(pessoa);
+    public Produto alterar(@RequestBody Produto produto) {
+        return produtoService.alterar(produto);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
-        pessoaService.excluir(id);
+    public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
+        produtoService.excluir(id);
         return ResponseEntity.ok().build();
     }
 }
