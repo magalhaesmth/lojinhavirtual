@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.dev.backend.dto.PessoaClienteRequestDTO;
 import com.dev.backend.entity.Pessoa;
-import com.dev.backend.repository.PessoaRepository;
+import com.dev.backend.repository.PessoaClienteRepository;
 
 @Service
 public class PessoaClienteService {
     
     @Autowired
-    private PessoaRepository pessoaRepository;
+    private PessoaClienteRepository pessoaRepository;
 
     @Autowired
     private PermissaoPessoaService permissaoPessoaService;
