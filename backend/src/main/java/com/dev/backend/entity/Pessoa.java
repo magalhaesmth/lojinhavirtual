@@ -12,8 +12,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.ManyToAny;
-
 import lombok.Data;
 
 @Entity
@@ -31,10 +29,14 @@ public class Pessoa {
     private String senha;
     private String endereco;
     private String cep;
+    private String codigoRecuperacaoSenha;
 
     @ManyToOne
     @JoinColumn(name = "idCidade")
     private Cidade cidade;    
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataEnvioCodigo;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
