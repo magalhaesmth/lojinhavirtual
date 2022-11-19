@@ -16,8 +16,6 @@ import { InputMask } from 'primereact/inputmask';
 import { MultiSelect } from 'primereact/multiselect';
 
 
-//{nome:'Frank', permissaoPessoas:[{permissao:{id:55}}]}
-
 const Pessoa = () => {
 
     let objetoNovo = {
@@ -199,6 +197,33 @@ const Pessoa = () => {
         );
     }
 
+    const cpfBodyTemplate = (rowData) => {
+        return (
+            <>
+                <span className="p-column-title">CPF</span>
+                {rowData.cpf}
+            </>
+        );
+    }
+
+    const emailBodyTemplate = (rowData) => {
+        return (
+            <>
+                <span className="p-column-title">E-mail</span>
+                {rowData.email}
+            </>
+        );
+    }
+
+    const enderecoBodyTemplate = (rowData) => {
+        return (
+            <>
+                <span className="p-column-title">Endereço</span>
+                {rowData.endereco}
+            </>
+        );
+    }
+
 
     const actionBodyTemplate = (rowData) => {
         return (
@@ -248,6 +273,9 @@ const Pessoa = () => {
                         globalFilter={globalFilter} emptyMessage="Sem objetos cadastrados." header={header} responsiveLayout="scroll">
                         <Column field="id" header="ID" sortable body={idBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
                         <Column field="nome" header="Nome" sortable body={nomeBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
+                        <Column field="cpf" header="CPF" sortable body={cpfBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
+                        <Column field="email" header="E-mail" sortable body={emailBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
+                        <Column field="endereco" header="Endereço" sortable body={enderecoBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
                         <Column body={actionBodyTemplate}></Column>
                     </DataTable>
 

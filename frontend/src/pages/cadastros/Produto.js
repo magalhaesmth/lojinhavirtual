@@ -173,6 +173,15 @@ const Produto = () => {
         );
     }
 
+    const valorVendaBodyTemplate = (rowData) => {
+        return (
+            <>
+                <span className="p-column-title">Valor de Venda</span>
+                {rowData.valorVenda}
+            </>
+        );
+    }
+
     const actionBodyTemplate = (rowData) => {
         return (
             <div className="actions">
@@ -221,8 +230,8 @@ const Produto = () => {
                         globalFilter={globalFilter} emptyMessage="Sem objetos cadastrados." header={header} responsiveLayout="scroll">
                         <Column field="id" header="ID" sortable body={idBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
                         <Column field="descricaoCurta" header="Descrição Curta" sortable body={descricaoCurtaBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
-                        <Column field="valorCustoBodyTemplate" header="Valor de Custo" sortable body={valorCustoBodyTemplate} headerStyle={{ width: '20%', minWidth: '10rem' }}></Column>
-
+                        <Column field="valorCustoBodyTemplate" header="Valor de Custo" sortable body={valorCustoBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
+                        <Column field="valorVendaBodyTemplate" header="Valor de Venda" sortable body={valorVendaBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
                         <Column body={actionBodyTemplate}></Column>
                     </DataTable>
 
