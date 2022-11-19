@@ -19,9 +19,9 @@ import { Link } from 'react-router-dom';
 
 const Produto = () => {
     let objetoNovo = {
-        descricaoCurta: '',
         marca: '',
         categoria: '',
+        descricaoCurta: '',
         descricaoDetalhada: '',
         valorCusto: '',
         valorVenda: ''
@@ -162,7 +162,16 @@ const Produto = () => {
             </>
         );
     }
+    
 
+    const valorCustoBodyTemplate = (rowData) => {
+        return (
+            <>
+                <span className="p-column-title">Valor de Custo</span>
+                {rowData.valorCusto}
+            </>
+        );
+    }
 
     const actionBodyTemplate = (rowData) => {
         return (
@@ -173,7 +182,6 @@ const Produto = () => {
             </div>
         );
     }
-
 
     const header = (
         <div className="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
@@ -213,6 +221,8 @@ const Produto = () => {
                         globalFilter={globalFilter} emptyMessage="Sem objetos cadastrados." header={header} responsiveLayout="scroll">
                         <Column field="id" header="ID" sortable body={idBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
                         <Column field="descricaoCurta" header="Descrição Curta" sortable body={descricaoCurtaBodyTemplate} headerStyle={{ width: '14%', minWidth: '10rem' }}></Column>
+                        <Column field="valorCustoBodyTemplate" header="Valor de Custo" sortable body={valorCustoBodyTemplate} headerStyle={{ width: '20%', minWidth: '10rem' }}></Column>
+
                         <Column body={actionBodyTemplate}></Column>
                     </DataTable>
 
