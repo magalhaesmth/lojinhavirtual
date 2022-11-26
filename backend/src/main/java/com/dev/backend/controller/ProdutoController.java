@@ -19,31 +19,33 @@ import com.dev.backend.service.ProdutoService;
 
 @RestController
 @RequestMapping("api/produto")
+@CrossOrigin
 public class ProdutoController {
 
     @Autowired
     private ProdutoService produtoService;
 
     @GetMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public List<Produto> buscarTodos() {
         return produtoService.buscarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Produto buscarPorId(@PathVariable("id") Long id) {
+        return produtoService.buscarPorId(id);
+    }
+
     @PostMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public Produto inserir(@RequestBody Produto produto) {
         return produtoService.inserir(produto);
     }
 
     @PutMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public Produto alterar(@RequestBody Produto produto) {
         return produtoService.alterar(produto);
     }
 
     @DeleteMapping("/{id}")
-    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
         produtoService.excluir(id);
         return ResponseEntity.ok().build();

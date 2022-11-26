@@ -19,31 +19,28 @@ import com.dev.backend.service.PermissaoService;
 
 @RestController
 @RequestMapping("api/permissao")
+@CrossOrigin
 public class PermissaoController {
 
     @Autowired
     private PermissaoService permissaoService;
 
     @GetMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public List<Permissao> buscarTodos() {
         return permissaoService.buscarTodos();
     }
 
     @PostMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public Permissao inserir(@RequestBody Permissao permissao) {
         return permissaoService.inserir(permissao);
     }
 
     @PutMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public Permissao alterar(@RequestBody Permissao permissao) {
         return permissaoService.alterar(permissao);
     }
 
     @DeleteMapping("/{id}")
-    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
         permissaoService.excluir(id);
         return ResponseEntity.ok().build();

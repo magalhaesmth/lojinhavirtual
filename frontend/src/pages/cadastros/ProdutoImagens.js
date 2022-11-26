@@ -17,6 +17,7 @@ const ProdutoImagens = () => {
         idProduto: null,
         nome: null
     };
+
     let parametros = useParams();
     const [objetos, setObjetos] = useState(null);
     const [objetoDeleteDialog, setObjetoDeleteDialog] = useState(false);
@@ -34,7 +35,7 @@ const ProdutoImagens = () => {
                 buscarPorProduto(result.data.id);
             });
         }
-        //setObjetos([{},{}])
+        setObjetos([{},{}])
     }, [objetos]);
 
     const buscarPorProduto = (idProduto) => {
@@ -53,7 +54,6 @@ const ProdutoImagens = () => {
     }
 
     const deleteObjeto = () => {
-
            produtoImagensService.excluir(objeto.id).then(data => {
                 toast.current.show({ severity: 'success', summary: 'Sucesso', detail: 'Removido', life: 3000 });
                 setObjetos(null);
@@ -104,7 +104,6 @@ const ProdutoImagens = () => {
     );
 
     const header = renderHeader();
-
     return (
         <div className="dataview-demo">
             <Toast ref={toast} />

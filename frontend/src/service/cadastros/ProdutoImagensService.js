@@ -21,6 +21,5 @@ uploadImagens(obj){
 
 buscarPorProduto(idProduto){
     return axios.get(this.url+"produto/"+idProduto);
-}
-
+    }
 }

@@ -20,31 +20,28 @@ import com.dev.backend.service.EstadoService;
 
 @RestController
 @RequestMapping("/api/estado")
+@CrossOrigin
 public class EstadoController {
     
     @Autowired
     private EstadoService estadoService;
 
     @GetMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public List<Estado> buscarTodos(){
         return estadoService.buscarTodos();
     }
 
     @PostMapping("/")
-    @CrossOrigin("http://localhost:3000") //Colocar em todos Endpoints
     public Estado inserir(@RequestBody Estado estado){
         return estadoService.inserir(estado);
     }
 
     @PutMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public Estado alterar(@RequestBody Estado estado){
         return estadoService.alterar(estado);
     }
 
     @DeleteMapping("/{id}")
-    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
         estadoService.excluir(id);
         return ResponseEntity.ok().build();

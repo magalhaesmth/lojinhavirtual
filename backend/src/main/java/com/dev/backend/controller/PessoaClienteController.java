@@ -13,13 +13,13 @@ import com.dev.backend.service.PessoaClienteService;
 
 @RestController
 @RequestMapping("/api/cliente")
+@CrossOrigin
 public class PessoaClienteController {
     
     @Autowired
     private PessoaClienteService pessoaService;
 
     @PostMapping("/")
-    @CrossOrigin("http://localhost:3000")
     public Pessoa inserir(@RequestBody PessoaClienteRequestDTO pessoaClienteRequestDTO){
         return pessoaService.registrar(pessoaClienteRequestDTO);
     }

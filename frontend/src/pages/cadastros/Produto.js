@@ -45,11 +45,9 @@ const Produto = () => {
 
         marcaService.listarTodos().then(res => {
             setMarcas(res.data)
-
         });
         categoriaService.listarTodos().then(res => {
             setCategorias(res.data)
-
         });
 
     }, []);
@@ -97,7 +95,6 @@ const Produto = () => {
                     toast.current.show({ severity: 'success', summary: 'Sucesso', detail: 'Inserido com Sucesso', life: 3000 });
                     setObjetos(null);
                 });
-
             }
             setObjetoDialog(false);
             setObjeto(objetoNovo);
@@ -115,10 +112,8 @@ const Produto = () => {
     }
 
     const deleteObjeto = () => {
-
         objetoService.excluir(objeto.id).then(data => {
             toast.current.show({ severity: 'success', summary: 'Sucesso', detail: 'Removido', life: 3000 });
-
             setObjetos(null);
             setObjetoDeleteDialog(false);
 
@@ -130,7 +125,6 @@ const Produto = () => {
         const val = (e.target && e.target.value) || '';
         let _objeto = { ...objeto };
         _objeto[`${name}`] = val;
-
         setObjeto(_objeto);
     }
 
@@ -185,9 +179,9 @@ const Produto = () => {
     const actionBodyTemplate = (rowData) => {
         return (
             <div className="actions">
-                <Link to={{ pathname: '/produtoImagens/' + rowData.id }}>   <Button icon="pi pi-image" className="p-button-rounded p-button-primary mr-2" /></Link>
+                <Link to={{ pathname: '/produtoImagens/' + rowData.id }}><Button icon="pi pi-image" className="p-button-rounded p-button-help mr-2" /></Link>
                 <Button icon="pi pi-pencil" className="p-button-rounded p-button-success mr-2" onClick={() => editObjeto(rowData)} />
-                <Button icon="pi pi-trash" className="p-button-rounded p-button-warning mt-2" onClick={() => confirmDeleteObjeto(rowData)} />
+                <Button icon="pi pi-trash" className="p-button-rounded p-button-danger mt-2" onClick={() => confirmDeleteObjeto(rowData)} />
             </div>
         );
     }
