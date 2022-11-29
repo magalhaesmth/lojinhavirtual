@@ -35,7 +35,6 @@ const ProdutoImagens = () => {
                 buscarPorProduto(result.data.id);
             });
         }
-        setObjetos([{},{}])
     }, [objetos]);
 
     const buscarPorProduto = (idProduto) => {
@@ -74,7 +73,7 @@ const ProdutoImagens = () => {
             <div className="col-12 md:col-4">
                 <div className="product-grid-item card">
                     <div className="product-grid-item-content">
-                        <Image src={'data:image;base64, ' + data.arquivo} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} preview />
+                        <Image src={'data:image;base64' + data.arquivo} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} preview />
                         <Button icon="pi pi-times" className="p-button-danger" label="Remover" onClick={() => confirmDeleteObjeto(data)}></Button>
                     </div>
                 </div>

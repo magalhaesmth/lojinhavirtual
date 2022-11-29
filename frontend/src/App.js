@@ -169,31 +169,31 @@ const App = () => {
         {
             label: 'Home',
             items: [{
-                label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/'
+                label: 'Dashboard', icon: 'pi pi-fw pi-chevron-circle-down', to: '/'
             }]
         },
         {
             label: 'Cadastros',
             items: [{
-                label: 'Estados', icon: 'pi pi-fw pi-home', to: '/estados'
+                label: 'Estados', icon: 'pi pi-fw pi-map', to: '/estados'
             },
             {
-                label: 'Cidades', icon: 'pi pi-fw pi-home', to: '/cidades'
+                label: 'Cidades', icon: 'pi pi-fw pi-building', to: '/cidades'
             },
             {
-                label: 'Marcas', icon: 'pi pi-fw pi-home', to: '/marcas'
+                label: 'Marcas', icon: 'pi pi-fw pi-amazon', to: '/marcas'
             },
             {
-                label: 'Categorias', icon: 'pi pi-fw pi-home', to: '/categorias'
+                label: 'Categorias', icon: 'pi pi-fw pi-list', to: '/categorias'
             },
             {
-                label: 'Produtos', icon: 'pi pi-fw pi-home', to: '/produtos'
+                label: 'Produtos', icon: 'pi pi-fw pi-apple', to: '/produtos'
             },
             {
-                label: 'Permissões', icon: 'pi pi-fw pi-home', to: '/permissoes'
+                label: 'Permissões', icon: 'pi pi-fw pi-tags', to: '/permissoes'
             },
             {
-                label: 'Pessoas', icon: 'pi pi-fw pi-home', to: '/pessoas'
+                label: 'Pessoas', icon: 'pi pi-fw pi-user', to: '/pessoas'
             }]
         },
         {
