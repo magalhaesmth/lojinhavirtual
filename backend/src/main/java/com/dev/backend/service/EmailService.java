@@ -30,7 +30,7 @@ public class EmailService {
     public String enviarEmailTexto(String destinatario, String titulo, String mensagem){
         try{
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-            simpleMailMessage.setFrom("matheusurbano2002@hotmail.com");
+            simpleMailMessage.setFrom(remetente);
             simpleMailMessage.setTo(destinatario);
             simpleMailMessage.setSubject(titulo);
             simpleMailMessage.setText(mensagem);
