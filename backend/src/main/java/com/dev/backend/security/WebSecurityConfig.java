@@ -37,6 +37,7 @@ public class WebSecurityConfig {
         http.cors().and().csrf().disable()
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and().authorizeRequests().antMatchers("/api/pessoa-gerenciamento/**").permitAll()
+        .antMatchers("/api/pessoa/**").hasAnyAuthority("Admin")
         .anyRequest().authenticated();
 
         http.addFilterBefore(authFilterToken(), UsernamePasswordAuthenticationFilter.class);
