@@ -11,9 +11,9 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private String chaveSecreta = "$2a$10$ghQJzmaakyQKMBTDHhUuuOBuwfvYUCF6X9p.PCtPBI47oaJtgddlu";
+    private String chaveSecreta = "chaveSecretaParaGerarToken";
 
-    private int validadeToken = 900000;
+    private int validadeToken = 90000;
 
     private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
 
