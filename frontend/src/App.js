@@ -196,7 +196,7 @@ const App = () => {
                 label: 'Pessoas', icon: 'pi pi-fw pi-user', to: '/pessoas'
             }]
         },
-        {
+        /*{
             label: 'UI Components', icon: 'pi pi-fw pi-sitemap',
             items: [
                 { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
@@ -289,7 +289,7 @@ const App = () => {
                 { label: 'Documentation', icon: 'pi pi-fw pi-question', command: () => { window.location = "#/documentation" } },
                 { label: 'View Source', icon: 'pi pi-fw pi-search', command: () => { window.location = "https://github.com/primefaces/sakai-react" } }
             ]
-        }
+        }*/
     ];
 
     const addClass = (element, className) => {
